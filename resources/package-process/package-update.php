@@ -1,24 +1,24 @@
 <?php
 
-    app()->register('Laravel\Socialite\SocialiteServiceProvider');
+    app()->register('Telenok\Socialite\SocialiteServiceProvider');
 
     $this->line('Examine app.php');
 
     $this->call('telenok:package', [
         'action' => 'add-provider',
-        '--provider' => 'Laravel\Socialite\SocialiteServiceProvider',
+        '--provider' => 'Telenok\Socialite\SocialiteServiceProvider',
     ]);
 
     $this->line('Package new classes copy');
 
     $this->call('vendor:publish', [
         '--tag' => ['resourcesapp'],
-        '--provider' => 'Telenok\Account\AccountServiceProvider',
+        '--provider' => 'Telenok\Socialite\SocialiteServiceProvider',
     ]);
 
     $this->line('Package migrating', true);
 
     $this->call('migrate', [
-        '--path' => 'vendor/telenok/account/src/migrations',
+        '--path' => 'vendor/telenok/socialite/src/migrations',
         '--force' => true
     ]);
