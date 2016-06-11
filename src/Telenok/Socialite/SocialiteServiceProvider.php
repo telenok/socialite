@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Socialite;
+namespace Telenok\Socialite;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -20,9 +20,11 @@ class SocialiteServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('Laravel\Socialite\Contracts\Factory', function ($app) {
-            return new SocialiteManager($app);
+        $this->app->singleton('Telenok\Socialite\Contracts\Factory', function ($app) {
+            return new \App\Telenok\Socialite\SocialiteManager($app);
         });
+
+        $this->publishes([realpath(__DIR__ . '/../../../resources/app') => app_path()], 'resourcesapp');
     }
 
     /**
@@ -32,6 +34,6 @@ class SocialiteServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['Laravel\Socialite\Contracts\Factory'];
+        return ['Telenok\Socialite\Contracts\Factory'];
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Socialite\Two;
+namespace Telenok\Socialite\Contracts;
 
-interface ProviderInterface
+interface Provider
 {
     /**
      * Redirect the user to the authentication page for the provider.
@@ -14,7 +14,7 @@ interface ProviderInterface
     /**
      * Get the User instance for the authenticated user.
      *
-     * @return \Laravel\Socialite\Two\User
+     * @return \Telenok\Socialite\Contracts\User
      */
     public function user();
 }

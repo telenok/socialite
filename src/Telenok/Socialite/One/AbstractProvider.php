@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Socialite\One;
+namespace Telenok\Socialite\One;
 
 use Illuminate\Http\Request;
 use InvalidArgumentException;
 use League\OAuth1\Client\Server\Server;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Laravel\Socialite\Contracts\Provider as ProviderContract;
+use Telenok\Socialite\Contracts\Provider as ProviderContract;
 
 abstract class AbstractProvider implements ProviderContract
 {
@@ -55,7 +55,7 @@ abstract class AbstractProvider implements ProviderContract
      * Get the User instance for the authenticated user.
      *
      * @throws \InvalidArgumentException
-     * @return \Laravel\Socialite\One\User
+     * @return \Telenok\Socialite\One\User
      */
     public function user()
     {

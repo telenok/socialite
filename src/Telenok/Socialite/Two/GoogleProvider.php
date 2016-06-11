@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Socialite\Two;
+namespace Telenok\Socialite\Two;
 
 use Illuminate\Support\Arr;
 

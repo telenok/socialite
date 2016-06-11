@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Socialite\Contracts;
+namespace Telenok\Socialite\Contracts;
 
 interface User
 {

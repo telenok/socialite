@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Socialite\Contracts;
+namespace Telenok\Socialite\Contracts;
 
 interface Factory
 {
@@ -8,7 +8,7 @@ interface Factory
      * Get an OAuth provider implementation.
      *
      * @param  string  $driver
-     * @return \Laravel\Socialite\Contracts\Provider
+     * @return \Telenok\Socialite\Contracts\Provider
      */
     public function driver($driver = null);
 }

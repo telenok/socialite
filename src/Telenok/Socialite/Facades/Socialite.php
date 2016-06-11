@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Socialite\Facades;
+namespace Telenok\Socialite\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Laravel\Socialite\SocialiteManager
+ * @see \Telenok\Socialite\SocialiteManager
  */
 class Socialite extends Facade
 {
