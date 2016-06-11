@@ -3,15 +3,29 @@
 namespace Telenok\Socialite;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Foundation\Application;
 
 class SocialiteServiceProvider extends ServiceProvider
 {
+    public function __construct(Application $app)
+    {
+        parent::__construct($app);
+
+        include __DIR__ . '/../../config/event.php';
+    }
+
     /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
+     * @method boot
+     * Load config, routers, create singletons and others.
+     * @return {void}
+     * @member Telenok.Socialite.CoreServiceProvider
      */
-    protected $defer = true;
+    public function boot()
+    {
+        $this->loadViewsFrom(realpath(__DIR__ . '/../../view'), 'socialite');
+        $this->loadTranslationsFrom(realpath(__DIR__ . '/../../lang'), 'socialite');
+        $this->publishes([realpath(__DIR__ . '/../../../resources/app') => app_path()], 'resourcesapp');
+    }
 
     /**
      * Register the service provider.
@@ -23,17 +37,5 @@ class SocialiteServiceProvider extends ServiceProvider
         $this->app->singleton('Telenok\Socialite\Contracts\Factory', function ($app) {
             return new \App\Telenok\Socialite\SocialiteManager($app);
         });
-
-        $this->publishes([realpath(__DIR__ . '/../../../resources/app') => app_path()], 'resourcesapp');
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return ['Telenok\Socialite\Contracts\Factory'];
     }
 }

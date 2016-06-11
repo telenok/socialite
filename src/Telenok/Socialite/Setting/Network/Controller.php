@@ -12,7 +12,7 @@ class Controller extends \App\Telenok\Core\Abstraction\Setting\Controller {
      * @protected
      * @property {String} $key
      * Controller's key.
-     * @member Telenok.Core.Setting.Basic.Controller
+     * @member Telenok.Socialite.Setting.Network.Controller
      */
     protected $key = 'telenok.socialite';
     
@@ -20,7 +20,7 @@ class Controller extends \App\Telenok\Core\Abstraction\Setting\Controller {
      * @protected
      * @property {Array} $defaultValue
      * Default values for current settings.
-     * @member Telenok.Core.Setting.Basic.Controller
+     * @member Telenok.Socialite.Setting.Network.Controller
      */
     protected $defaultValue = [
         'services.github.client_id' => "",
